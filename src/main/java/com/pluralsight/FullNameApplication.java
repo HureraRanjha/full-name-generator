@@ -17,7 +17,7 @@ public class FullNameApplication
         String middleName = "";
         String lastName = "";
         String suffix = "";
-        if(partsOfName[1].contains("."))
+        if(partsOfName[1].contains(".") || (!fullName.contains(",") && partsOfName.length > 2) || (partsOfName.length > 3))
         {
             middleName = partsOfName[1];
             lastName = partsOfName[2];
@@ -26,7 +26,6 @@ public class FullNameApplication
                 lastName = lastName.substring(0,lastName.length()-1);
             }
 
-            System.out.println("Changed last name no COMMA " + lastName);
             if(partsOfName.length == 4)
             {
                 suffix = partsOfName[3];
